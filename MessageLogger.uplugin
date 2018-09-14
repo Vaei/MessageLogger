@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "1.0",
+  "VersionName": "1.0.0",
   "FriendlyName": "MessageLogger",
   "Description": "Provides an easy way to print messages to the Message Log using both Blueprint and C++",
   "Category": "Other",
@@ -17,11 +17,10 @@
   "Modules": [
     {
       "Name": "MessageLogger",
-      "Type": "Editor",
+      "Type": "Developer",
       "LoadingPhase": "Default",
       "WhitelistPlatforms": [
         "Win64",
-        "Win32"
       ]
     }
   ]

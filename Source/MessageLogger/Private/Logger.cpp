@@ -3,7 +3,10 @@
 #include "Logger.h"
 #include "MessageLog/Public/MessageLogModule.h"
 #include "MessageLog.h"
+
+#if WITH_EDITOR
 #include "Editor.h"
+#endif  // WITH_EDITOR
 
 void ULogger::AddLogCategory(
 	const FName LogName, 
@@ -16,6 +19,7 @@ void ULogger::AddLogCategory(
 	const bool bShowInLogWindow /*= true*/
 )
 {
+#if WITH_EDITOR
 	FMessageLogInitializationOptions LogOptions = FMessageLogInitializationOptions();
 	LogOptions.bShowFilters = bShowFilters;
 	LogOptions.bShowPages = bShowPages;
@@ -26,30 +30,38 @@ void ULogger::AddLogCategory(
 
 	FMessageLogModule& MessageLogModule = FModuleManager::LoadModuleChecked<FMessageLogModule>("MessageLog");
 	MessageLogModule.RegisterLogListing(LogName, LogLabel, LogOptions);
+#endif  // WITH_EDITOR
 }
 
 void ULogger::RemoveLogCategory(const FName LogName)
 {
+#if WITH_EDITOR
 	FMessageLogModule& MessageLogModule = FModuleManager::LoadModuleChecked<FMessageLogModule>("MessageLog");
 	MessageLogModule.UnregisterLogListing(LogName);
+#endif  // WITH_EDITOR
 }
 
 void ULogger::MessageLog(const FString InfoString, const ELoggerCategories Log /*= ELoggerCategories::LC_PlayInEditor*/, const ELoggerSeverity Severity /*= ELoggerSeverity::LS_Info*/)
 {
+#if WITH_EDITOR
 	MessageLogByName(InfoString, GetLogNameFromCategory(Log), Severity);
+#endif  // WITH_EDITOR
 }
 
 void ULogger::MessageLogEndPlay(const FString InfoString)
 {
+#if WITH_EDITOR
 	MessageLogByName(InfoString, GetLogNameFromCategory(ELoggerCategories::LC_PlayInEditor), ELoggerSeverity::LS_CriticalError);
 	if (GEditor)
 	{
 		GEditor->RequestEndPlayMap();
 	}
+#endif  // WITH_EDITOR
 }
 
 void ULogger::MessageLogByName(const FString InfoString, const FName LogName, const ELoggerSeverity Severity /*= ELoggerSeverity::LS_Info*/)
 {
+#if WITH_EDITOR
 	FMessageLog MessageLog{ LogName };
 	const FText MessageText = FText::FromString(InfoString);
 
@@ -81,4 +93,5 @@ void ULogger::MessageLogByName(const FString InfoString, const FName LogName, co
 			break;
 		}
 	}
+#endif  // WITH_EDITOR
 }
