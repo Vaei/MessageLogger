@@ -1,4 +1,4 @@
-// Copyright (c) 2018 Vaei. MIT License.
+// Copyright (c) 2018 Vaei
 
 using UnrealBuildTool;
 

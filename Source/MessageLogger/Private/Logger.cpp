@@ -1,4 +1,4 @@
-// Copyright (c) 2018 Vaei. MIT License.
+// Copyright (c) 2018 Vaei
 
 #include "Logger.h"
 #include "MessageLog/Public/MessageLogModule.h"
@@ -6,6 +6,7 @@
 
 #if WITH_EDITOR
 #include "Editor.h"
+#include "ModuleManager.h"
 #endif  // WITH_EDITOR
 
 void ULogger::AddLogCategory(

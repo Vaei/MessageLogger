@@ -2,15 +2,15 @@
   "FileVersion": 3,
   "Version": 1,
   "VersionName": "1.0.0",
+  "EngineVersion": "4.20.0",
   "FriendlyName": "MessageLogger",
   "Description": "Provides an easy way to print messages to the Message Log using both Blueprint and C++",
   "Category": "Other",
   "CreatedBy": "Vaei",
   "CreatedByURL": "",
   "DocsURL": "https://docs.google.com/document/d/1691qwT_Lw80EjGi0iBUjqRD5dB8oc8ADlqOrtdiY9Kk/edit?usp=sharing",
-  "MarketplaceURL": "",
+  "MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/86b18646495d4935880462a1380009cd",
   "SupportURL": "",
-  "EngineVersion": "4.20.0",
   "CanContainContent": false,
   "IsBetaVersion": false,
   "Installed": true,
@@ -20,7 +20,7 @@
       "Type": "Developer",
       "LoadingPhase": "Default",
       "WhitelistPlatforms": [
-        "Win64",
+        "Win64"
       ]
     }
   ]
