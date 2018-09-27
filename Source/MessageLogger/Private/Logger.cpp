@@ -11,7 +11,7 @@
 
 void ULogger::AddLogCategory(
 	const FName LogName, 
-	const FText LogLabel,
+	const FName LogLabel,
 	const bool bShowFilters /*= false*/, 
 	const bool bShowPages /*= false*/,
 	const bool bAllowClear /*= true*/,
@@ -30,7 +30,7 @@ void ULogger::AddLogCategory(
 	LogOptions.bShowInLogWindow = bShowInLogWindow;
 
 	FMessageLogModule& MessageLogModule = FModuleManager::LoadModuleChecked<FMessageLogModule>("MessageLog");
-	MessageLogModule.RegisterLogListing(LogName, LogLabel, LogOptions);
+	MessageLogModule.RegisterLogListing(LogName, FText::FromName(LogLabel), LogOptions);
 #endif  // WITH_EDITOR
 }
 

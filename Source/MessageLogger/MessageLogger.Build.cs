@@ -14,14 +14,14 @@ public class MessageLogger : ModuleRules
 				"Core",
 				// ... add other public dependencies that you statically link with here ...
 			}
-			);
+            );
 			
 		
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"CoreUObject",
-				"Engine",
+                "CoreUObject",
+                "Engine",
                 "UnrealEd",
 				// ... add private dependencies that you statically link with here ...	
 			}

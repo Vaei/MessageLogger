@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "TextProperty.h"
 #include "Logger.generated.h"
 
 UENUM(BlueprintType)
@@ -58,7 +57,7 @@ public:
 	 * @param bShowInLogWindow Whether to show this log in the main log window
 	 */
 	UFUNCTION(BlueprintCallable, Category = MessageLogger, meta = (DevelopmentOnly, DisplayName = "Add Message Log Category"))
-	static void AddLogCategory(const FName LogName, const FText LogLabel, const bool bShowFilters = false, const bool bShowPages = false, const bool bAllowClear = true, const bool bDiscardDuplicates = false, const int32 MaxPageCount = 20, const bool bShowInLogWindow = true);
+	static void AddLogCategory(const FName LogName, const FName LogLabel, const bool bShowFilters = false, const bool bShowPages = false, const bool bAllowClear = true, const bool bDiscardDuplicates = false, const int32 MaxPageCount = 20, const bool bShowInLogWindow = true);
 
 	/**
 	 * Remove a category from the message log
