@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Modules/ModuleManager.h"
+#include "ModuleInterface.h"
 
 class FMessageLoggerModule : public IModuleInterface
 {

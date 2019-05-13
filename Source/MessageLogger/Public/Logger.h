@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Logger.generated.h"
 
 UENUM(BlueprintType)
@@ -39,7 +38,7 @@ enum class ELoggerSeverity : uint8
 /**
  * 
  */
-UCLASS()
+UCLASS(meta = (DisplayName = "Logger"))
 class MESSAGELOGGER_API ULogger : public UObject
 {
 	GENERATED_BODY()
@@ -93,7 +92,7 @@ public:
 	static void MessageLogByName(const FString InfoString, const FName LogName, const ELoggerSeverity Severity = ELoggerSeverity::LS_Info);
 
 private:
-	FORCEINLINE static FName GetLogNameFromCategory(const ELoggerCategories& Category)
+	static FName GetLogNameFromCategory(const ELoggerCategories& Category)
 	{
 		switch (Category)
 		{

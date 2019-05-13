@@ -7,8 +7,9 @@ public class MessageLogger : ModuleRules
 	public MessageLogger(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+        bEnforceIWYU = true;
 
-		PublicDependencyModuleNames.AddRange(
+        PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
 				"Core",
@@ -22,9 +23,14 @@ public class MessageLogger : ModuleRules
 			{
                 "CoreUObject",
                 "Engine",
-                "UnrealEd",
 				// ... add private dependencies that you statically link with here ...	
 			}
-			);
-	}
+		    );
+
+        if (Target.Type == TargetRules.TargetType.Editor)
+        {
+            PublicDependencyModuleNames.Add("UnrealEd");
+            PrivateDependencyModuleNames.Add("MessageLog");
+        }
+    }
 }

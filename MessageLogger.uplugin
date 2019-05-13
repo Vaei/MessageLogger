@@ -2,7 +2,7 @@
   "FileVersion": 3,
   "Version": 1,
   "VersionName": "1.0.0",
-  "EngineVersion": "4.20.0",
+  "EngineVersion": "4.22.0",
   "FriendlyName": "MessageLogger",
   "Description": "Provides an easy way to print messages to the Message Log using both Blueprint and C++",
   "Category": "Other",

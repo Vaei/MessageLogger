@@ -1,12 +1,12 @@
 // Copyright (c) 2018 Vaei
 
 #include "Logger.h"
-#include "MessageLog/Public/MessageLogModule.h"
-#include "MessageLog.h"
 
 #if WITH_EDITOR
 #include "Editor.h"
 #include "ModuleManager.h"
+#include "MessageLog.h"
+#include "MessageLog/Public/MessageLogModule.h"
 #endif  // WITH_EDITOR
 
 void ULogger::AddLogCategory(
